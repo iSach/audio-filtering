@@ -19,7 +19,7 @@ public class Example
     {
         try
         {
-            Filter testFilter = new GainFilter(20);
+            Filter testFilter = new DelayFilter(44100 * 5);
             TestAudioFilter.applyFilter(testFilter, "queen.wav", "output.wav");
         }
         catch(Exception e)

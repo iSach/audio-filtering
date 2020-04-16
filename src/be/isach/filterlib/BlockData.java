@@ -17,7 +17,7 @@ public class BlockData {
      * -1 = empty.
      * Contains available inputs.
      */
-    private double[] inputBuffer;
+    private Double[] inputBuffer;
 
     /**
      *  Filters it takes its inputs from.
@@ -35,7 +35,8 @@ public class BlockData {
 
     public BlockData(Filter filter) {
         this.filter = filter;
-        this.inputBuffer = new double[filter.nbInputs()];
+        this.inputBuffer = new Double[filter.nbInputs()];
+        Arrays.fill(inputBuffer, null);
         this.inputFilters = new HashMap<>();
         this.outputFilters = new HashMap<>();
     }
@@ -44,15 +45,15 @@ public class BlockData {
      * Returns the input buffer and clears it.
      * @return input to use
      */
-    public double[] consumeBuffer() {
-        double[] input = inputBuffer.clone();
-        Arrays.fill(inputBuffer, -1);
+    public Double[] consumeBuffer() {
+        Double[] input = inputBuffer.clone();
+        Arrays.fill(inputBuffer, null);
         return input;
     }
 
     public boolean allInputsAvailable() {
-       for(double d : inputBuffer)
-           if(d == -1) return false;
+       for(Double d : inputBuffer)
+           if(d == null) return false;
         return true;
     }
 
@@ -68,7 +69,7 @@ public class BlockData {
         this.outputFilters.putIfAbsent(f, pos);
     }
 
-    public double[] getInputBuffer() {
+    public Double[] getInputBuffer() {
         return inputBuffer;
     }
 

@@ -74,8 +74,8 @@ public class DelayFilter implements Filter {
      * Adds a value to the queue.
      * @param sample the value to add to the queue.
      */
-    public void enqueue(double sample) {
-        queue.add(sample);
+    public void enqueue(double[] sample) {
+        queue.add(sample[0]);
     }
 
     /**
@@ -103,7 +103,7 @@ public class DelayFilter implements Filter {
         }
 
         double output = pop();
-        enqueue(input[0]);
+        enqueue(input);
 
         return new double[]{output};
     }

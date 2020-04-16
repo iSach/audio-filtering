@@ -15,7 +15,7 @@ public class Demo {
 
             // Creates the basic blocks
             Filter gain = new GainFilter(0.6);
-            Filter delay = new DelayFilter(10*10*10*10);
+            Filter delay = new DelayFilter(10 * 10 * 10 * 10);
             Filter add = new AdditionFilter();
 
             // Adds them to the CompositeFilter
@@ -25,9 +25,9 @@ public class Demo {
 
             // Connects the blocks together
             echoFilter.connectInputToBlock(0, add, 0);
-            echoFilter.connectBlockToBlock(add, 0, gain, 0);
-            echoFilter.connectBlockToBlock(gain, 0, delay, 0);
-            echoFilter.connectBlockToBlock(delay, 0, add, 1);
+            echoFilter.connectBlockToBlock(add, 0, delay, 0);
+            echoFilter.connectBlockToBlock(delay, 0, gain, 0);
+            echoFilter.connectBlockToBlock(gain, 0, add, 1);
             echoFilter.connectBlockToOutput(add, 0, 0);
 
             // Applies the filter

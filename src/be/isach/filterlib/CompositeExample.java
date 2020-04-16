@@ -2,6 +2,7 @@ package be.isach.filterlib;
 
 import be.isach.filterlib.filters.AdditionFilter;
 import be.isach.filterlib.filters.CompositeFilter;
+import be.isach.filterlib.filters.DelayFilter;
 import be.isach.filterlib.filters.GainFilter;
 import be.uliege.montefiore.oop.audio.Filter;
 import be.uliege.montefiore.oop.audio.TestAudioFilter;
@@ -14,7 +15,7 @@ public class CompositeExample {
 
             // Creates the basic blocks
             Filter mult1 = new GainFilter(0.1);
-            Filter mult2 = new GainFilter(0.1);
+            Filter mult2 = new DelayFilter(10*10*10*10*10);
             Filter add = new AdditionFilter();
 
             // Adds them to the CompositeFilter
