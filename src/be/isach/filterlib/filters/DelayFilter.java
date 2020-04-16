@@ -127,4 +127,11 @@ public class DelayFilter implements Filter {
     public int getDelay() {
         return delay;
     }
+
+    /**
+     * @return {true} if the filter needs to be updated, {false} otherwise.
+     */
+    public boolean needsUpdating() {
+        return queue.size() < delay;
+    }
 }

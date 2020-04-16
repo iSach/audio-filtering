@@ -14,8 +14,8 @@ public class CompositeExample {
             CompositeFilter audioFilter = new CompositeFilter(1, 1);
 
             // Creates the basic blocks
-            Filter mult1 = new GainFilter(0.1);
-            Filter mult2 = new DelayFilter(10*10*10*10*10);
+            Filter mult1 = new GainFilter(0.3);
+            Filter mult2 = new DelayFilter(10 * 10 * 10 * 10 * 10);
             Filter add = new AdditionFilter();
 
             // Adds them to the CompositeFilter
@@ -31,11 +31,9 @@ public class CompositeExample {
             audioFilter.connectBlockToOutput(add, 0, 0);
 
             // Applies the filter
-            TestAudioFilter.applyFilter(audioFilter, "queen.wav",
-                    "test.wav");
+            TestAudioFilter.applyFilter(audioFilter, "queen.wav", "test.wav");
         } catch (Exception e) {
-            //System.err.println("Error: " + e.getMessage());
-            e.printStackTrace();
+            System.err.println("Error: " + e.getMessage());
         }
     }
 }
