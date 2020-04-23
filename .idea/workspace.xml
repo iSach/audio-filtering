@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="55ad0dc4-5d65-4bd8-a2a0-068e721ffcf5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/queen_all_passed.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/queen_cascaded.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/queen_echoed2.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/queen_reverbed.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/queen_test_composite.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/examples/CascadingAllPassFiltersExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/examples/CompositeAltEchoFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/examples/CompositeSimpleFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/examples/ExampleAllPassFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/filters/AllPassFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/filters/EchoFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/audio.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oop_project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop_project/META-INF/oop_project.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop_project/be/isach/filterlib/BlockData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop_project/be/isach/filterlib/CompositeExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop_project/be/isach/filterlib/Demo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop_project/be/isach/filterlib/filters/AdditionFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop_project/be/isach/filterlib/filters/CompositeFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop_project/be/isach/filterlib/filters/DelayFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/oop_project/be/isach/filterlib/filters/GainFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/queen_echoed.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/BlockData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/util/BlockData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/CompositeExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/filters/CompositeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/filters/CompositeFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/filters/DelayFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/filters/DelayFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.wav" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="GzMAQCEE" />
+  </component>
+  <component name="ProjectId" id="1aZciCqX2QRHcekMlR79HS6nZvF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="be.isach.filterlib.filters" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Demo (Echo)">
+    <configuration name="All-Pass" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.ExampleAllPassFilter" />
+      <module name="oop_project" />
+      <option name="PROGRAM_PARAMETERS" value="queen.wav queen_all_passed.wav" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.isach.filterlib.examples.CompositeExample" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Alt Echo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.CompositeAltEchoFilter" />
+      <module name="oop_project" />
+      <option name="PROGRAM_PARAMETERS" value="queen.wav queen_reverbed.wav" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.isach.filterlib.examples.CompositeExample" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Cascading " type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.CascadingAllPassFiltersExample" />
+      <module name="oop_project" />
+      <option name="PROGRAM_PARAMETERS" value="queen.wav queen_cascaded.wav" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.isach.filterlib.examples.CompositeExample" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo (Echo)" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.Demo" />
+      <module name="oop_project" />
+      <option name="PROGRAM_PARAMETERS" value="queen.wav queen_echoed2.wav" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.isach.filterlib.examples.CompositeExample" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dummy Example" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.CompositeSimpleFilter" />
+      <module name="oop_project" />
+      <option name="PROGRAM_PARAMETERS" value="queen.wav queen_test_composite.wav" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.isach.filterlib.examples.CompositeExample" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Alt Echo" />
+      <item itemvalue="Application.All-Pass" />
+      <item itemvalue="Application.Cascading " />
+      <item itemvalue="Application.Dummy Example" />
+      <item itemvalue="Application.Demo (Echo)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Demo (Echo)" />
+        <item itemvalue="Application.Dummy Example" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55ad0dc4-5d65-4bd8-a2a0-068e721ffcf5" name="Default Changelist" comment="" />
+      <created>1586946681798</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586946681798</updated>
+      <workItem from="1586946683325" duration="3356000" />
+      <workItem from="1586956435592" duration="39232000" />
+      <workItem from="1587125503505" duration="3229000" />
+      <workItem from="1587172492496" duration="19000" />
+      <workItem from="1587680278373" duration="259000" />
+      <workItem from="1587680576147" duration="1163000" />
+      <workItem from="1587681951100" duration="107000" />
+      <workItem from="1587682106877" duration="65000" />
+      <workItem from="1587682185315" duration="126000" />
+      <workItem from="1587682325783" duration="131000" />
+    </task>
+    <task id="LOCAL-00001" summary="erdeadea">
+      <created>1587046957095</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587046957095</updated>
+    </task>
+    <task id="LOCAL-00002" summary="erdeadea">
+      <created>1587062098147</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587062098147</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="erdeadea" />
+    <option name="LAST_COMMIT_MESSAGE" value="erdeadea" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587680484465">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="304" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1587680484465" />
+    <state width="1638" height="275" key="GridCell.Tab.0.bottom" timestamp="1587681928514">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="275" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1587681928514" />
+    <state width="1638" height="275" key="GridCell.Tab.0.center" timestamp="1587681928514">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="275" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1587681928514" />
+    <state width="1638" height="275" key="GridCell.Tab.0.left" timestamp="1587681928513">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="275" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1587681928513" />
+    <state width="1638" height="275" key="GridCell.Tab.0.right" timestamp="1587681928514">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="1638" height="275" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1587681928514" />
+    <state x="341" y="175" key="SettingsEditor" timestamp="1587682364271">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="341" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1587682364271" />
+  </component>
+</project>

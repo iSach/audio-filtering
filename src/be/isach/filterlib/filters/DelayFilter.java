@@ -134,4 +134,13 @@ public class DelayFilter implements Filter {
     public boolean needsUpdating() {
         return queue.size() < delay;
     }
+
+    /**
+     * Critical case: the queue is empty. Should not happen.
+     * Only exists for error support purposes.
+     * @return {true} if the queue is empty, {false} otherwise.
+     */
+    public boolean isEmpty() {
+        return queue.isEmpty();
+    }
 }
