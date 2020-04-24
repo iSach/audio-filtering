@@ -18,7 +18,7 @@ public class ExampleAllPassFilter {
         String outputFile = args[1];
 
         try {
-            AllPassFilter allPassFilter = new AllPassFilter(0.5, 1323);
+            AllPassFilter allPassFilter = new AllPassFilter(0.5, 3323);
 
             // Applies the filter
             TestAudioFilter.applyFilter(allPassFilter, inputFile, outputFile);
