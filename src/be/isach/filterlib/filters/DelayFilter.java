@@ -31,8 +31,8 @@ public class DelayFilter implements Filter {
     /**
      * Initializes a new Delay Filter with the specified delay.
      *
-     * @param delay The number of samples by which new samples are delayed
-     *              before being output.
+     * @param delay The *number of samples* by which new samples are delayed
+     *              before being output. (NOT IN MILLISECONDS)
      */
     public DelayFilter(int delay) {
         this.delay = delay;
