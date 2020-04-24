@@ -26,8 +26,8 @@ public class EchoFilter extends CompositeFilter {
         addBlock(add);
 
         connectInputToBlock(0, add, 0);
-        connectBlockToBlock(add, 0, gainFilter, 0);
-        //connectBlockToBlock(delayFilter, 0, gainFilter, 0);
+        connectBlockToBlock(add, 0, delayFilter, 0);
+        connectBlockToBlock(delayFilter, 0, gainFilter, 0);
         connectBlockToBlock(gainFilter, 0, add, 1);
         connectBlockToOutput(add, 0, 0);
     }

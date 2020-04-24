@@ -4,6 +4,16 @@ import be.isach.filterlib.filters.*;
 import be.isach.filterlib.reverberator.ReverberatorFilter;
 import be.uliege.montefiore.oop.audio.TestAudioFilter;
 
+/**
+ * Demo classes.
+ * Allows to demonstrate the echo filter, and the reverberator filter.
+ *
+ * Program arguments for each mode:
+ * Echo:
+ *       input.wav output.wave
+ * Reverb:
+ *       Reverb input.wav output.wave
+ */
 public class Demo {
 
     private enum DemoMode {
@@ -31,7 +41,6 @@ public class Demo {
             try {
                 EchoFilter echoFilter = new EchoFilter(0.6, 10000);
 
-                // Applies the filter
                 TestAudioFilter.applyFilter(echoFilter, inputFile, outputFile);
             } catch (Exception e) {
                 System.err.println("Error: " + e.getMessage());
@@ -43,7 +52,6 @@ public class Demo {
             try {
                 ReverberatorFilter reverbFilter = new ReverberatorFilter();
 
-                // Applies the filter
                 TestAudioFilter.applyFilter(reverbFilter, inputFile, outputFile);
             } catch (Exception e) {
                 System.err.println("Error: " + e.getMessage());

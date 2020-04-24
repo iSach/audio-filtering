@@ -6,13 +6,16 @@ import be.isach.filterlib.filters.DelayFilter;
 import be.isach.filterlib.filters.GainFilter;
 import be.uliege.montefiore.oop.audio.Filter;
 
+/**
+ * Implements a low-pass filters, which attenuates higher frequencies.
+ */
 public class LowPassFilter extends CompositeFilter {
 
     /**
-     * Initializes an all-pass filter, a special type of composite filter.
+     * Initializes an low-pass filter, a special type of composite filter.
      *
-     * @param gain  The gain of the all-pass filter.
-     * @param delay The delay of the all-pass filter.
+     * @param gain  The gain of the low-pass filter.
+     * @param delay The delay of the low-pass filter.
      */
     public LowPassFilter(double gain, int delay) {
         super(1, 1);

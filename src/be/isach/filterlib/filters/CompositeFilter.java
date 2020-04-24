@@ -293,7 +293,6 @@ public class CompositeFilter implements Filter {
 
     /**
      * Checks if the composite filter is valid, and updates the flag.
-     * TODO: Check for loops without a delay filter?
      */
     private void checkIfValid() {
 
@@ -326,7 +325,8 @@ public class CompositeFilter implements Filter {
     }
 
     /**
-     * @return {true} if the composite filter is correct, {false} otherwise.
+     * @return {@code true} if the composite filter is correct,
+     *         {@code false} otherwise.
      */
     public boolean isValid() {
         return valid;

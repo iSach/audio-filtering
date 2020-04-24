@@ -2,23 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55ad0dc4-5d65-4bd8-a2a0-068e721ffcf5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/acdc.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/acdc_reverberatored.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/queen_reverbd.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/queen_reverberatored.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/reverberator/DoubleNestedFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/reverberator/LowPassFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/reverberator/ReverberatorFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/reverberator/SimpleNestedFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/oop-project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/acdc_reverberatored_old.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/queen_cascaded2.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/examples/CascadingFiltersExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/reverberator/NestedFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/util/CascadingAllPassFiltersBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/be/isach/filterlib/util/CascadingFiltersBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/queen_all_passed.wav" beforeDir="false" afterPath="$PROJECT_DIR$/queen_all_passed.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/acdc_reverberatored.wav" beforeDir="false" afterPath="$PROJECT_DIR$/acdc_reverberatored.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/examples/ExampleAllPassFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/examples/ExampleAllPassFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/examples/CascadingAllPassFiltersExample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/examples/CompositeAltEchoFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/examples/CompositeAltEchoFilterExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/examples/CompositeSimpleFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/examples/CompositeSimpleFilterExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/examples/ExampleAllPassFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/examples/ExampleAllPassFilterExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/filters/CompositeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/filters/CompositeFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/filters/DelayFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/filters/DelayFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/filters/EchoFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/filters/EchoFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/reverberator/DoubleNestedFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/reverberator/LowPassFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/reverberator/LowPassFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/reverberator/ReverberatorFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/reverberator/ReverberatorFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/reverberator/SimpleNestedFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/be/isach/filterlib/util/BlockData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/be/isach/filterlib/util/BlockData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +57,18 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="be.isach.filterlib.util" />
       <recent name="be.isach.filterlib.filters" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -68,9 +76,9 @@
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Demo (Reverb)">
+  <component name="RunManager" selected="Application.Demo (Echo)">
     <configuration name="All-Pass" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.ExampleAllPassFilter" />
+      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.ExampleAllPassFilterExample" />
       <module name="oop-project" />
       <option name="PROGRAM_PARAMETERS" value="queen.wav queen_all_passed.wav" />
       <extension name="coverage">
@@ -84,8 +92,8 @@
       </method>
     </configuration>
     <configuration name="Alt Echo" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.CompositeAltEchoFilter" />
-      <module name="oop_project" />
+      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.CompositeAltEchoFilterExample" />
+      <module name="oop-project" />
       <option name="PROGRAM_PARAMETERS" value="queen.wav queen_reverbed.wav" />
       <extension name="coverage">
         <pattern>
@@ -98,8 +106,8 @@
       </method>
     </configuration>
     <configuration name="Cascading " type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.CascadingAllPassFiltersExample" />
-      <module name="oop_project" />
+      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.CascadingFiltersExample" />
+      <module name="oop-project" />
       <option name="PROGRAM_PARAMETERS" value="queen.wav queen_cascaded.wav" />
       <extension name="coverage">
         <pattern>
@@ -148,7 +156,8 @@
     <configuration name="Dummy Example" type="Application" factoryName="Application" temporary="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11 (2)" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.CompositeSimpleFilter" />
+      <option name="MAIN_CLASS_NAME" value="be.isach.filterlib.examples.CompositeSimpleFilterExample" />
+      <module name="oop-project" />
       <option name="PROGRAM_PARAMETERS" value="queen.wav queen_test_composite.wav" />
       <extension name="coverage">
         <pattern>
@@ -198,6 +207,7 @@
       <workItem from="1587682961646" duration="9000" />
       <workItem from="1587682973428" duration="363000" />
       <workItem from="1587683339203" duration="5220000" />
+      <workItem from="1587688831531" duration="5934000" />
     </task>
     <task id="LOCAL-00001" summary="erdeadea">
       <created>1587046957095</created>
@@ -213,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587062098147</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added ReverberatorFilter">
+      <created>1587688975026</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587688975026</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +251,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="erdeadea" />
-    <option name="LAST_COMMIT_MESSAGE" value="erdeadea" />
+    <MESSAGE value="Added ReverberatorFilter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ReverberatorFilter" />
   </component>
   <component name="WindowStateProjectService">
     <state x="493" y="172" width="668" height="728" key="#Demo_(Echo)" timestamp="1587682862372">
@@ -245,33 +263,45 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="328" y="118" key="#Project_Structure/0.23.1680.1027@0.23.1680.1027" timestamp="1587683211943" />
-    <state x="304" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587688236641">
+    <state x="304" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587694977679">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="304" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1587688236641" />
-    <state width="1638" height="275" key="GridCell.Tab.0.bottom" timestamp="1587688731149">
+    <state x="304" y="198" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1587694977679" />
+    <state x="417" y="26" key="CommitChangelistDialog2" timestamp="1587688967492">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="275" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1587688731149" />
-    <state width="1638" height="275" key="GridCell.Tab.0.center" timestamp="1587688731148">
+    <state x="417" y="26" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1587688967492" />
+    <state width="1638" height="170" key="GridCell.Tab.0.bottom" timestamp="1587695190925">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="275" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1587688731148" />
-    <state width="1638" height="275" key="GridCell.Tab.0.left" timestamp="1587688731148">
+    <state width="1638" height="170" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1587695190925" />
+    <state width="1638" height="170" key="GridCell.Tab.0.center" timestamp="1587695190924">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="275" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1587688731148" />
-    <state width="1638" height="275" key="GridCell.Tab.0.right" timestamp="1587688731148">
+    <state width="1638" height="170" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1587695190924" />
+    <state width="1638" height="170" key="GridCell.Tab.0.left" timestamp="1587695190923">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1638" height="275" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1587688731148" />
-    <state x="341" y="175" key="SettingsEditor" timestamp="1587683286572">
+    <state width="1638" height="170" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1587695190923" />
+    <state width="1638" height="170" key="GridCell.Tab.0.right" timestamp="1587695190925">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="341" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1587683286572" />
-    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1587683457141">
+    <state width="1638" height="170" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1587695190925" />
+    <state x="341" y="175" key="SettingsEditor" timestamp="1587690823339">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1587683457141" />
+    <state x="341" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1587690823339" />
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2" timestamp="1587689098183">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="440" y="272" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1587689098183" />
+    <state x="538" y="277" width="604" height="518" key="find.popup" timestamp="1587691718884">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="538" y="277" width="604" height="518" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1587691718884" />
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1587693628061">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1587693628061" />
   </component>
 </project>
