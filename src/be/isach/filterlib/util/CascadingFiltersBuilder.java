@@ -1,6 +1,5 @@
 package be.isach.filterlib.util;
 
-import be.isach.filterlib.filters.AllPassFilter;
 import be.isach.filterlib.filters.CompositeFilter;
 import be.uliege.montefiore.oop.audio.Filter;
 
@@ -10,14 +9,13 @@ import be.uliege.montefiore.oop.audio.Filter;
 public class CascadingFiltersBuilder {
 
     /**
-     * Linked chain (cascade)'s tail.
-     */
-    private Filter lastAdded;
-
-    /**
      * Currently being built composite filter.
      */
     private final CompositeFilter beingBuilt;
+    /**
+     * Linked chain (cascade)'s tail.
+     */
+    private Filter lastAdded;
 
     /**
      * Initializes the builder.

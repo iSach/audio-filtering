@@ -42,6 +42,9 @@ public class Demo {
                 EchoFilter echoFilter = new EchoFilter(0.6, 10000);
 
                 TestAudioFilter.applyFilter(echoFilter, inputFile, outputFile);
+
+                System.out.println("Applied Echo Filter to " + inputFile);
+                System.out.println("Wrote Result to " + outputFile);
             } catch (Exception e) {
                 System.err.println("Error: " + e.getMessage());
             }
@@ -52,7 +55,12 @@ public class Demo {
             try {
                 ReverberatorFilter reverbFilter = new ReverberatorFilter();
 
-                TestAudioFilter.applyFilter(reverbFilter, inputFile, outputFile);
+                TestAudioFilter.applyFilter(reverbFilter, inputFile,
+                        outputFile);
+
+                System.out.println("Applied Reverberator Filter to " +
+                        inputFile);
+                System.out.println("Wrote Result to " + outputFile);
             } catch (Exception e) {
                 System.err.println("Error: " + e.getMessage());
             }
