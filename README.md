@@ -25,6 +25,7 @@ Now, there are two demo modes to run the code:
 The `example` package contains some example files, demonstrating some
 implemented filters, and some combinations of them. For example, the cascade
 of 3 all-pass filters as it was suggested to implement it.
+They can be run similarly to the echo demo mentioned above;
 
 ### `filters` package
 It contains all the basic filters, plus some more complex implementations

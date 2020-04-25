@@ -199,7 +199,8 @@ public class CompositeFilter implements Filter {
             } else {
                 BlockData data = filtersData.get(f);
                 int compositeInputIndex = data.getInputFilters().get(this);
-                data.addToBuffer(input[compositeInputIndex], inputFilters.get(f));
+                data.addToBuffer(input[compositeInputIndex],
+                        inputFilters.get(f));
                 computeAux(f);
             }
         }
@@ -210,7 +211,8 @@ public class CompositeFilter implements Filter {
         double[] finalOutput = new double[output.length];
         for (int i = 0; i < finalOutput.length; i++) {
             if (output[i] == null) {
-                throw new FilterException("Filter is not valid, possibly mising a delay filter in a loop.");
+                throw new FilterException("Filter is not valid, " +
+                        "possibly mising a delay filter in a loop.");
             }
 
             finalOutput[i] = output[i];
@@ -256,7 +258,8 @@ public class CompositeFilter implements Filter {
             // If the filter is a delay filter that needs updating (because it's
             // in a loop and was already popped), then just enqueue a new value.
             // Otherwise, just process it normally.
-            if (filter instanceof DelayFilter && ((DelayFilter) filter).needsUpdating()) {
+            if (filter instanceof DelayFilter
+                    && ((DelayFilter) filter).needsUpdating()) {
                 ((DelayFilter) filter).enqueue(input);
                 return;
             } else {

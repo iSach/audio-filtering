@@ -4,6 +4,9 @@ import be.isach.filterlib.filters.*;
 import be.isach.filterlib.reverberator.ReverberatorFilter;
 import be.uliege.montefiore.oop.audio.TestAudioFilter;
 
+import java.time.Duration;
+import java.time.Instant;
+
 /**
  * Demo classes.
  * Allows to demonstrate the echo filter, and the reverberator filter.
@@ -41,10 +44,15 @@ public class Demo {
             try {
                 EchoFilter echoFilter = new EchoFilter(0.6, 10000);
 
-                TestAudioFilter.applyFilter(echoFilter, inputFile, outputFile);
+                Instant start = Instant.now();
+                TestAudioFilter.applyFilter(echoFilter, inputFile,
+                        outputFile);
+                Instant finish = Instant.now();
+                long timeElapsed = Duration.between(start, finish).toMillis();
 
                 System.out.println("Applied Echo Filter to " + inputFile);
                 System.out.println("Wrote Result to " + outputFile);
+                System.out.println("Time elapsed: " + timeElapsed);
             } catch (Exception e) {
                 System.err.println("Error: " + e.getMessage());
             }
@@ -54,13 +62,16 @@ public class Demo {
 
             try {
                 ReverberatorFilter reverbFilter = new ReverberatorFilter();
-
+                Instant start = Instant.now();
                 TestAudioFilter.applyFilter(reverbFilter, inputFile,
                         outputFile);
+                Instant finish = Instant.now();
+                long timeElapsed = Duration.between(start, finish).toMillis();
 
                 System.out.println("Applied Reverberator Filter to " +
                         inputFile);
                 System.out.println("Wrote Result to " + outputFile);
+                System.out.println("Time elapsed: " + timeElapsed);
             } catch (Exception e) {
                 System.err.println("Error: " + e.getMessage());
             }

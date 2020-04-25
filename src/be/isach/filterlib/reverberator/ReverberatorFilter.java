@@ -55,7 +55,8 @@ public class ReverberatorFilter extends CompositeFilter {
         connectBlockToBlock(gain014, 0, intermediateAdditionFilter, 1);
         connectBlockToBlock(subFilter3, 0, gain014b, 0);
         connectBlockToBlock(subFilter3, 0, lowPassFilter, 0);
-        connectBlockToBlock(intermediateAdditionFilter, 0, endAdditionFilter, 0);
+        connectBlockToBlock(intermediateAdditionFilter, 0,
+                endAdditionFilter, 0);
         connectBlockToBlock(gain014b, 0, endAdditionFilter, 1);
         connectBlockToBlock(lowPassFilter, 0, gain01, 0);
         connectBlockToOutput(endAdditionFilter, 0, 0);
