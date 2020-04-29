@@ -2,7 +2,6 @@ package be.isach.filterlib.examples;
 
 import be.isach.filterlib.filters.CompositeFilter;
 import be.isach.filterlib.util.CascadingAllPassFiltersBuilder;
-import be.isach.filterlib.util.CascadingFiltersBuilder;
 import be.uliege.montefiore.oop.audio.TestAudioFilter;
 
 /**

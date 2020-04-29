@@ -1,9 +1,6 @@
 package be.isach.filterlib.util;
 
 import be.isach.filterlib.filters.AllPassFilter;
-import be.isach.filterlib.filters.CompositeFilter;
-
-import java.util.logging.Filter;
 
 /**
  * Tool to easily build a cascade of several all-pass filters.

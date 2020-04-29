@@ -298,8 +298,6 @@ public class CompositeFilter implements Filter {
      * Checks if the composite filter is valid, and updates the flag.
      */
     private void checkIfValid() {
-
-
         // Check if each input of the composite is connected.
         if (inputFilters.size() < nbInputs()) {
             valid = false;
@@ -323,7 +321,6 @@ public class CompositeFilter implements Filter {
                 }
             }
         }
-
         valid = true;
     }
 

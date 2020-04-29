@@ -2,6 +2,7 @@ package be.isach.filterlib;
 
 import be.isach.filterlib.filters.*;
 import be.isach.filterlib.reverberator.ReverberatorFilter;
+import be.uliege.montefiore.oop.audio.Filter;
 import be.uliege.montefiore.oop.audio.TestAudioFilter;
 
 import java.time.Duration;
@@ -13,9 +14,9 @@ import java.time.Instant;
  *
  * Program arguments for each mode:
  * Echo:
- *       input.wav output.wave
+ *       input3.wav output.wave
  * Reverb:
- *       Reverb input.wav output.wave
+ *       Reverb input3.wav output.wave
  */
 public class Demo {
 
@@ -73,6 +74,7 @@ public class Demo {
                 System.out.println("Wrote Result to " + outputFile);
                 System.out.println("Time elapsed: " + timeElapsed);
             } catch (Exception e) {
+                e.printStackTrace();
                 System.err.println("Error: " + e.getMessage());
             }
         }
