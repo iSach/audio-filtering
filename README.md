@@ -1,14 +1,14 @@
-NOTE: THE BONUS REVERBERATOR LIBRARY *HAS BEEN IMPLEMENTED*.
-Exclusively related to the reverberator:
-* `be.isach.filterlib.reverberator.ReverberatorFilter`
-* `be.isach.filterlib.reverberator.NestedFilter`
-* `be.isach.filterlib.reverberator.LowPassFilter`
-
-# OOP Project - Filters Library
+# OOP Course (INFO0062-1) Project - Audio Filters Library
 
 - Academic Year: 2019-2020.
 - Submission Limit: 26th of April.
 - Student: LEWIN Sacha (S181947)
+- Grade: `18/20`
+
+## Notes
+The OOP implementation is not very good. The composite filter could be improved by distributing more tasks to external classes, especially by making BlockData not only store Data but make it really act as a sub-filter by making them send messages between each other to go through the "graph".
+
+Another even more optimal solution is to use a model of the problem as a directed graph. This could also be implemented, and then select the appropriate traversal through it.
 
 ## Running the library
 First, you need an input file. Let's consider we have an input file `input.wav`.
