@@ -2,7 +2,8 @@
 
 - Academic Year: 2019-2020.
 - Submission Limit: 26th of April.
-- Student: LEWIN Sacha (S181947)
+- Author: LEWIN Sacha (S181947)
+- Teacher: Bernard Boigelot
 - Grade: `18/20`
 
 ## Notes
