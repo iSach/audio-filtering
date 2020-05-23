@@ -3,9 +3,6 @@ package be.isach.filterlib.filters;
 import be.uliege.montefiore.oop.audio.Filter;
 import be.uliege.montefiore.oop.audio.FilterException;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * Implements a delay filter.
  * <p>
@@ -26,7 +23,11 @@ public class DelayFilter implements Filter {
      * Stores the delay delayed values, as a queue, considering how values
      * need to be read and added.
      */
-    private Queue<Double> queue;
+    private double[] queue;
+
+    private int counter;
+
+    private boolean needsUpdate;
 
     /**
      * Initializes a new Delay Filter with the specified delay.
@@ -36,7 +37,10 @@ public class DelayFilter implements Filter {
      */
     public DelayFilter(int delay) {
         this.delay = delay;
-        this.queue = new LinkedList<>();
+        this.queue = new double[delay];
+        this.counter = 0;
+
+        this.needsUpdate = false;
 
         // Initialize the queue with delay 0 values.
         reset();
@@ -64,18 +68,30 @@ public class DelayFilter implements Filter {
 
     /**
      * Pops a value from the queue and returns it.
+     *
      * @return the popped double.
      */
     public double pop() {
-        return queue.remove();
+        double d = queue[counter];
+        this.needsUpdate = true;
+        return d;
     }
 
     /**
      * Adds a value to the queue.
+     *
      * @param sample the value to add to the queue.
      */
     public void enqueue(double[] sample) {
-        queue.add(sample[0]);
+        queue[counter] = sample[0];
+
+        this.needsUpdate = false;
+
+        if (counter == delay - 1) {
+            counter = 0;
+        } else {
+            counter++;
+        }
     }
 
     /**
@@ -88,16 +104,16 @@ public class DelayFilter implements Filter {
      * @param input contains the input sample to compute the filter on.
      *              Has to contain only one input for this filter.
      * @return an array containing one output: the input, delayed by delay
-     *         values.
+     * values.
      * @throws FilterException if the input array is null or of wrong length.
      */
     @Override
     public double[] computeOneStep(double[] input) throws FilterException {
-        if(input == null) {
+        if (input == null) {
             throw new FilterException("Specified input array points to null.");
         }
 
-        if(input.length != nbInputs()) {
+        if (input.length != nbInputs()) {
             throw new FilterException("Invalid number of inputs. Expected: "
                     + nbInputs() + ", Got: " + input.length);
         }
@@ -115,10 +131,10 @@ public class DelayFilter implements Filter {
      */
     @Override
     public void reset() {
-        queue.clear();
+        queue = new double[delay];
 
-        for(int i = 0; i < delay; i++)
-            queue.add(0d);
+        for (int i = 0; i < delay; i++)
+            queue[i] = 0;
     }
 
     /**
@@ -130,18 +146,9 @@ public class DelayFilter implements Filter {
 
     /**
      * @return {@code true} if the filter needs to be updated,
-     *         {@code false} otherwise.
+     * {@code false} otherwise.
      */
     public boolean needsUpdating() {
-        return queue.size() < delay;
-    }
-
-    /**
-     * Critical case: the queue is empty. Should not happen.
-     * Only exists for error support purposes.
-     * @return {@code true} if the queue is empty, {@code false} otherwise.
-     */
-    public boolean isEmpty() {
-        return queue.isEmpty();
+        return needsUpdate;
     }
 }

@@ -1,6 +1,5 @@
 package be.isach.filterlib.filters;
 
-import be.isach.filterlib.util.BlockData;
 import be.uliege.montefiore.oop.audio.Filter;
 import be.uliege.montefiore.oop.audio.FilterException;
 
@@ -15,44 +14,25 @@ public class CompositeFilter implements Filter {
     /**
      * Stores the amount of inputs of the whole composite filter.
      */
-    private int inputsAmount;
+    private final int inputsAmount;
 
     /**
      * Stores the amount of outputs of the whole composite filter.
      */
-    private int outputsAmount;
+    private final int outputsAmount;
 
     /**
      * Stores the different filters in the composite filter, and their
      * corresponding block data.
      */
-    private Map<Filter, BlockData> filtersData;
+    private final Map<Filter, FilterBlock> blocks;
 
-    /**
-     * Filters the inputs of the composite filter point to.
-     * key: the filter.
-     * value: the input of the block pointed by the input of the composite.
-     */
-    private HashMap<Filter, Integer> inputFilters;
-
-    /**
-     * Filters it points to
-     * key: the filter.
-     * value: the output of the block that points to the outputs
-     * of the composite.
-     */
-    private HashMap<Filter, Integer> outputFilters;
+    private final FilterBlock selfBlock;
 
     /**
      * Stores the current output being built recursively.
      */
     private Double[] output;
-
-    /**
-     * Contains the visited filters, to avoid calling the same filter
-     * twice in a same cycle.
-     */
-    private Set<Filter> visited;
 
     /**
      * Stores validity of the composite filter.
@@ -70,12 +50,9 @@ public class CompositeFilter implements Filter {
         this.inputsAmount = inputsAmount;
         this.outputsAmount = outputsAmount;
 
-        this.filtersData = new HashMap<>();
+        this.blocks = new HashMap<>();
 
-        this.inputFilters = new HashMap<>();
-        this.outputFilters = new HashMap<>();
-
-        this.visited = new HashSet<>();
+        this.selfBlock = new FilterBlock(this, this);
     }
 
     /**
@@ -85,10 +62,10 @@ public class CompositeFilter implements Filter {
      * @param filter The filter to add
      */
     public void addBlock(Filter filter) {
-        if (filtersData.containsKey(filter)) return;
+        if (blocks.containsKey(filter)) return;
 
-        BlockData blockData = new BlockData(filter);
-        filtersData.put(filter, blockData);
+        FilterBlock blockData = new FilterBlock(filter, this);
+        blocks.put(filter, blockData);
     }
 
     /**
@@ -101,14 +78,14 @@ public class CompositeFilter implements Filter {
      */
     public void connectBlockToBlock(Filter f1, int o1, Filter f2, int i2) {
         // Check if both filters are already added, otherwise stop.
-        if (!filtersData.containsKey(f1) || !filtersData.containsKey(f2)) {
+        if (!blocks.containsKey(f1) || !blocks.containsKey(f2)) {
             return;
         }
 
-        BlockData data1 = filtersData.get(f1);
-        BlockData data2 = filtersData.get(f2);
-        data1.setFilterAsOutput(f2, i2);
-        data2.setFilterAsInput(f1, o1);
+        FilterBlock data1 = blocks.get(f1);
+        FilterBlock data2 = blocks.get(f2);
+        data1.setFilterAsOutput(data2, i2);
+        data2.setFilterAsInput(data1, o1);
 
         checkIfValid();
     }
@@ -122,13 +99,13 @@ public class CompositeFilter implements Filter {
      */
     public void connectBlockToOutput(Filter f1, int o1, int o2) {
         // Check if the filter is already added, otherwise stop.
-        if (!filtersData.containsKey(f1)) {
+        if (!blocks.containsKey(f1)) {
             return;
         }
 
-        BlockData data = filtersData.get(f1);
-        data.setFilterAsOutput(this, o2);
-        outputFilters.putIfAbsent(f1, o1);
+        FilterBlock data = blocks.get(f1);
+        data.setFilterAsOutput(selfBlock, o2);
+        selfBlock.setFilterAsOutput(data, o1);
 
         checkIfValid();
     }
@@ -142,13 +119,13 @@ public class CompositeFilter implements Filter {
      */
     public void connectInputToBlock(int i1, Filter f2, int i2) {
         // Check if the filter is already added, otherwise stop.
-        if (!filtersData.containsKey(f2)) {
+        if (!blocks.containsKey(f2)) {
             return;
         }
 
-        BlockData data = filtersData.get(f2);
-        data.setFilterAsInput(this, i1);
-        inputFilters.putIfAbsent(f2, i2);
+        FilterBlock data = blocks.get(f2);
+        data.setFilterAsInput(selfBlock, i1);
+        selfBlock.setFilterAsInput(data, i2);
 
         checkIfValid();
     }
@@ -172,7 +149,7 @@ public class CompositeFilter implements Filter {
                     + nbInputs() + ", Got: " + input.length);
         }
 
-        if (!isValid()) {
+        if (isInvalid()) {
             throw new FilterException("Filter is not valid, missing " +
                     "connections.");
         }
@@ -185,27 +162,27 @@ public class CompositeFilter implements Filter {
         }
 
         // First, pop delay filters to resolve loops.
-        for (Filter filter : filtersData.keySet()) {
-            if (filter instanceof DelayFilter) {
-                computeAux(filter);
+        for(FilterBlock block : blocks.values()) {
+            if(block.getFilter() instanceof DelayFilter) {
+                block.compute();
             }
         }
 
         // Call next filters, after giving them the input.
-        for (Filter f : inputFilters.keySet()) {
-            if (f == this) { // Special case where there's no other subfilter
-                int index = inputFilters.get(f);
+        for (FilterBlock block : selfBlock.getInputBlocks().keySet()) {
+            if (block == selfBlock) { // Special case when there's no other subfilter
+                int index = selfBlock.getInputBlocks().get(block);
                 output[index] = input[0];
             } else {
-                BlockData data = filtersData.get(f);
-                int compositeInputIndex = data.getInputFilters().get(this);
-                data.addToBuffer(input[compositeInputIndex],
-                        inputFilters.get(f));
-                computeAux(f);
+                int compositeInputIndex = block.getInputBlocks().get(selfBlock);
+                block.addToBuffer(input[compositeInputIndex],
+                        selfBlock.getInputBlocks().get(block));
+                block.compute();
             }
         }
 
-        visited.clear();
+        for (FilterBlock block : blocks.values())
+            block.setVisited(false);
 
         // Convert the array of references to one of primitives.
         double[] finalOutput = new double[output.length];
@@ -222,76 +199,10 @@ public class CompositeFilter implements Filter {
     }
 
     /**
-     * Recursive function for calling subfilters subsequently between
-     * each other.
-     * <p>
-     * Inputs and outputs are passed through the corresponding Block Data.
-     *
-     * @param filter The filter to compute.
-     * @throws FilterException if the computed output threw an error.
+     * End of chain: give the output to the owning composite filter.
      */
-    private void computeAux(Filter filter) throws FilterException {
-        if (visited.contains(filter)) return;
-
-        BlockData data = filtersData.get(filter);
-
-        // This means the called block is still waiting for another
-        // input to come from another call. Cancel this call.
-        if (!data.allInputsAvailable()) {
-            return;
-        }
-
-        // If true, we're on the first phase of the computing
-        // where we pop all delay filters that have technically ready
-        // inputs (previous ones) all the time.
-        // Enqueuing them happens later.
-        boolean poppingADelayFilter = filter instanceof DelayFilter
-                && !((DelayFilter) filter).needsUpdating();
-
-        double[] output;
-
-        // If we're not on the first phase
-        if (!poppingADelayFilter) {
-            double[] input = data.consumeBuffer();
-
-            // Read the output.
-            // If the filter is a delay filter that needs updating (because it's
-            // in a loop and was already popped), then just enqueue a new value.
-            // Otherwise, just process it normally.
-            if (filter instanceof DelayFilter
-                    && ((DelayFilter) filter).needsUpdating()) {
-                ((DelayFilter) filter).enqueue(input);
-                return;
-            } else {
-                output = filter.computeOneStep(input);
-            }
-
-            // Mark the filter as visited in the current cycle.
-            visited.add(filter);
-        } else { // just pop the delay filter otherwise.
-            output = new double[]{((DelayFilter) filter).pop()};
-        }
-
-        // Call the next filters.
-        for (Filter next : data.getOutputFilters().keySet()) {
-            if (next != this) {
-                BlockData nextData = filtersData.get(next);
-
-                // Insert our output as an input in the next filter's
-                // input buffer
-                int outputIndex = nextData.getInputFilters().get(filter);
-                nextData.addToBuffer(output[outputIndex],
-                        data.getOutputFilters().get(next));
-
-                computeAux(next);
-            } else {
-                Integer outputIndex = outputFilters.get(filter);
-                this.output[data.getOutputFilters().get(next)] =
-                        output[outputIndex];
-                // end of sub-cycle, reached the final output for this
-                // chain.
-            }
-        }
+    protected void insertOutput(int index, double value) {
+        this.output[index] = value;
     }
 
     /**
@@ -299,23 +210,24 @@ public class CompositeFilter implements Filter {
      */
     private void checkIfValid() {
         // Check if each input of the composite is connected.
-        if (inputFilters.size() < nbInputs()) {
+        if (selfBlock.getInputBlocks().size() < nbInputs()) {
             valid = false;
             return;
         }
 
         // Check if each output of the composite is connected.
-        if (outputFilters.size() < nbOutputs()) {
+        if (selfBlock.getOutputBlocks().size() < nbOutputs()) {
             valid = false;
             return;
         }
 
         // Check if each subfilter has all its outputs and inputs connected.
-        for (Filter f : inputFilters.keySet()) {
+        for (FilterBlock block : selfBlock.getInputBlocks().keySet()) {
+            Filter f = block.getFilter();
             if (f != this) {
-                BlockData data = filtersData.get(f);
-                if (data.getInputFilters().size() < f.nbInputs()
-                        || data.getOutputFilters().size() < f.nbOutputs()) {
+                FilterBlock data = blocks.get(f);
+                if (data.getInputBlocks().size() < f.nbInputs()
+                        || data.getOutputBlocks().size() < f.nbOutputs()) {
                     valid = false;
                     return;
                 }
@@ -325,11 +237,11 @@ public class CompositeFilter implements Filter {
     }
 
     /**
-     * @return {@code true} if the composite filter is correct,
+     * @return {@code true} if the composite filter is not correct,
      *         {@code false} otherwise.
      */
-    public boolean isValid() {
-        return valid;
+    public boolean isInvalid() {
+        return !valid;
     }
 
     /**
@@ -354,10 +266,17 @@ public class CompositeFilter implements Filter {
      */
     @Override
     public void reset() {
-        for (Filter filter : filtersData.keySet())
-            if (filter != this)
-                filter.reset();
+        for (FilterBlock block : blocks.values()) {
+            if (block != selfBlock) {
+                block.getFilter().reset();
+            }
+            block.setVisited(false);
+        }
+
         output = new Double[nbOutputs()];
-        visited.clear();
+    }
+
+    public FilterBlock getSelfBlock() {
+        return selfBlock;
     }
 }

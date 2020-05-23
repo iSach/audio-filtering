@@ -6,9 +6,11 @@
 - Grade: `18/20`
 
 ## Notes
-The OOP implementation is not very good. The composite filter could be improved by distributing more tasks to external classes, especially by making BlockData not only store Data but make it really act as a sub-filter by making them send messages between each other to go through the "graph".
+The project lost points in the grade because of a lack of OOP concepts around
+the center class "CompositeFilter". I've commit new changes to improve that afterwards.
 
-Another even more optimal solution is to use a model of the problem as a directed graph. This could also be implemented, and then select the appropriate traversal through it.
+A better implementation would be to consider the problem as going through
+a directed graph. This has not and will not be implemented.
 
 ## Running the library
 First, you need an input file. Let's consider we have an input file `input.wav`.
